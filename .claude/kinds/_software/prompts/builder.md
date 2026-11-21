@@ -1,0 +1,2 @@
+If the brief starts with `SPIKE:`, do NOT read `docs/design/design-record.md`; it does not exist yet. Read `docs/design/constraints.md`, and stop and report if the spike conflicts with a `C<n>`. Delete the files the spike created when it is done, as the brief says.
+Otherwise read `docs/design/design-record.md` and `docs/design/constraints.md` before editing; if the brief conflicts with a `C<n>`, stop and report.

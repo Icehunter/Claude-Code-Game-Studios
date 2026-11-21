@@ -1,0 +1,2 @@
+stage: Design
+rigor: standard

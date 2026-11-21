@@ -1,0 +1,7 @@
+# stage<TAB>min_rigor<TAB>glob<TAB>pattern<TAB>label   (pattern - means none)
+Concept	minimal	docs/design/constraints.md	-	constraints recorded
+Design	minimal	docs/design/premise-check.md	^## Sample fit	premise-check has Sample fit
+Design	minimal	docs/design/premise-check.md	^## Result	premise-check has Result
+Design	minimal	docs/design/design-record.md	^## Constraint check	design-record has Constraint check
+Design	standard	docs/design/adr/*.md	-	ADRs recorded (at full: one per decision, reviewer judges)
+Design	minimal	docs/design/design-record.md	^## Decision log	design-record has Decision log

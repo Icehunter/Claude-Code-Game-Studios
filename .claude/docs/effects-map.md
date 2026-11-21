@@ -1683,18 +1683,20 @@ reference game's name or art would ship with a selling goal); `cut` (`sell`, `ea
 
 ## project.kind
 
-> ### RESERVED - NOT IMPLEMENTED
+> ### PARTIALLY IMPLEMENTED
 >
-> **No skill or hook reads this setting. Setting it has no effect.** Everything
-> below describes the intended design, not current behaviour.
->
-> No reference anywhere outside this file.
+> `.claude/scripts/kind-read.sh` reads this key and reports it (`KIND`,
+> `SOURCE`, `PACK`). The pack kinds (`service`, `application`, `generic`) are
+> consumed by `ai-init --kind`, which takes its value from the flag, not from
+> this file. The skill-routing behaviour in the "Affected skills" table below is
+> still unbuilt: no skill reads this setting to change what it does. `game` is
+> the default and its behaviour is unchanged.
 
-**Controls:** What type of project this is — routes skill subsets
-**Values:** `game` | `tool` | `engine` | `mod` | `library`
+**Controls:** What type of project this is
+**Values:** `game` | `tool` | `engine` | `mod` | `library` | `service` | `application` | `generic`
 **Default:** `game`
-**Set by:** nothing
-**Read by:** nothing (the tables below are the unbuilt design)
+**Set by:** hand, in `project.yaml` (locked to it; never read from `project.local.yaml`)
+**Read by:** `.claude/scripts/kind-read.sh`
 
 ---
 
@@ -1707,10 +1709,16 @@ reference game's name or art would ship with a selling goal); `cut` (`sell`, `ea
 | `engine` | Custom engine or library underneath games | Skip game-specific concerns entirely (narrative, art, playtest) |
 | `mod` | Mod for an existing game | Skip engine setup; assume parent engine; reduce architecture scope |
 | `library` | Reusable library | Emphasize tests + API design; design docs lighter; no asset pipeline |
+| `service` | A backend service or API, not a game | Installable pack: `.claude/kinds/service/` |
+| `application` | A user-facing application, not a game | Installable pack: `.claude/kinds/application/` |
+| `generic` | Software that fits none of the other kinds | Installable pack: `.claude/kinds/generic/` |
+
+Only `service`, `application` and `generic` have packs. A value outside the
+eight is reported by `kind-read.sh` as `invalid(<value>)`.
 
 ---
 
-### Affected skills
+### Affected skills (NOT BUILT: design only, no skill reads `project.kind`)
 
 | Skill | game | tool | engine | mod | library |
 |-------|------|------|--------|-----|---------|

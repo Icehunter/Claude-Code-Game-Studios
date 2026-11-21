@@ -3,6 +3,11 @@
 
 schema_version: 1
 
+# project.kind (optional, locked to this file): game | tool | engine | mod |
+# library | service | application | generic. Absent means game. Only service,
+# application and generic have installable packs. See .claude/docs/effects-map.md.
+# Read with `bash .claude/scripts/kind-read.sh`.
+
 framework:
   version: 1.3.0
   last_upgraded: 2026-11-09

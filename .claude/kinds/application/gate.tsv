@@ -1,0 +1,3 @@
+# stage<TAB>min_rigor<TAB>glob<TAB>pattern<TAB>label   (pattern - means none)
+Design	full	docs/design/state-flow.md	-	state flow recorded
+Design	full	docs/design/ux-flow.md	-	ux flow recorded

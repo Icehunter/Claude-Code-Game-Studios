@@ -1,0 +1,5 @@
+name: application
+extends: _software
+agents: []
+skills: [state-ux-checklist]
+gate: gate.tsv

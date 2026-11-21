@@ -1,0 +1,7 @@
+name: _software
+extends: null          # service/application/generic: extends: _software
+agents: [architect, requirements-owner, design-reviewer]
+skills: [premise-check, user-constraints-binding, adr-first, output-style]
+prompts: {orchestrator: prompts/orchestrator.md, planner: prompts/planner.md, builder: prompts/builder.md}
+gate: gate.tsv
+scripts: [gate.sh]

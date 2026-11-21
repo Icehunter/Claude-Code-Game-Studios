@@ -1,0 +1,2 @@
+stage: Concept
+rigor: minimal

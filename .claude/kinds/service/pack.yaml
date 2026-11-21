@@ -1,0 +1,5 @@
+name: service
+extends: _software
+agents: []
+skills: [api-failure-checklist]
+gate: gate.tsv
